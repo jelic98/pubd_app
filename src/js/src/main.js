@@ -193,8 +193,23 @@ const cardChart4 = new Chart($('#card-chart4'), {
   }
 })
 
+const placesChart = new Chart($("#places-chart"), {
+	type: 'pie',
+	data: {
+    	datasets: [{
+        	data: [10, 20, 30]
+    	}],
+		labels: [
+        	'Red',
+        	'Yellow',
+        	'Blue'
+    	]
+	},
+	options: options
+});
+
 // eslint-disable-next-line no-unused-vars
-const mainChart = new Chart($('#main-chart'), {
+const sessionsChart = new Chart($('#sessions-chart'), {
   type: 'line',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],
