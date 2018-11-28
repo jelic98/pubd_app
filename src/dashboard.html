@@ -1,56 +1,20 @@
-<!DOCTYPE html>
-<!--
-* CoreUI - Free Bootstrap Admin Template
-* @version v2.1.9
-* @link https://coreui.io
-* Copyright (c) 2018 creativeLabs Łukasz Holeczek
-* Licensed under MIT (https://coreui.io/license)
--->
-
-<html lang="en">
+<html>
   <head>
     <base href="./">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
-    <meta name="author" content="Łukasz Holeczek">
-    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-    <title>CoreUI Free Bootstrap Admin Template</title>
-    <!-- Icons-->
+    <title>pubd - Dashboard</title>
     <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
-    <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
-    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-    <!-- Main styles for this application-->
-    <link href="css/style.css" rel="stylesheet">
     <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
-    <!-- Global site tag (gtag.js) - Google Analytics-->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      // Shared ID
-      gtag('config', 'UA-118965717-3');
-      // Bootstrap ID
-      gtag('config', 'UA-118965717-5');
-    </script>
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
     <header class="app-header navbar">
-      <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="dashboard.html">
-        <img class="navbar-brand-full" src="img/logo.png" width="90" height="auto" alt="CoreUI Logo">
-      </a>
       <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <a class="navbar-brand" href="dashboard.html">
+        <img class="navbar-brand-full" src="img/logo.png" width="90" height="auto">
+      </a>
     </header>
     <div class="app-body">
       <div class="sidebar">
@@ -58,12 +22,27 @@
           <ul class="nav">
             <li class="nav-item">
               <a class="nav-link" href="dashboard.html">
-                <i class="nav-icon icon-speedometer"></i> Dashboard
+                <i class="nav-icon cui-speedometer"></i> Dashboard
+              </a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="contact.html">
+                <i class="nav-icon cui-envelope-closed"></i> Contact
+              </a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="help.html">
+                <i class="nav-icon cui-info"></i> Help
+              </a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="help.html">
+                <i class="nav-icon cui-account-logout"></i> Logout
               </a>
             </li>
             <li class="nav-item mt-auto">
-              <a class="nav-link nav-link-success" href="https://coreui.io" target="_top">
-                <i class="nav-icon icon-cloud-download"></i> Download CoreUI</a>
+              <a class="nav-link nav-link-success" href="upgrade.html" target="_top">
+                <i class="nav-icon icon-star"></i> Upgrade</a>
             </li>
           </ul>
         </nav>
@@ -71,12 +50,12 @@
       <main class="main">
         <div class="container-fluid">
           <div class="animated fadeIn">
-		  <div class="card">
+		  <div class="card mt-2">
               <div class="card-body">
                 <div class="row">
                   <div class="col-sm-5">
-                    <h4 class="card-title mb-0">Traffic</h4>
-                    <div class="small text-muted">November 2017</div>
+                    <h4 class="card-title mb-0">Sessions</h4>
+                    <div class="small text-muted">Total number of sessions per day</div>
                   </div>
                   <div class="col-sm-7 d-none d-md-block">
                     <div class="btn-group btn-group-toggle float-right mr-3" data-toggle="buttons">
@@ -99,21 +78,19 @@
               <div class="card-footer">
                 <div class="row text-center">
                   <div class="col-sm-12 col-md mb-sm-2 mb-0">
-                    <div class="text-muted">Visits</div>
-                    <strong>29.703 Users (40%)</strong>
+                    	<div class="text-muted">Visits</div>
+                    	<strong>29.703 Users (40%)</strong>
                   </div>
-                </div>
+            	</div>
             </div>
-		  	<table class="table table-responsive-sm table-hover table-outline mb-0">
+            </div>
+			<div class="card p-3">
+		  	<table class="table table-responsive-sm table-hover table-outline">
                       <thead class="thead-light">
                         <tr>
-                          <th class="text-center">
-                            <i class="icon-people"></i>
-                          </th>
+                          <th>Image</th>
                           <th>User</th>
-                          <th class="text-center">Country</th>
                           <th>Usage</th>
-                          <th class="text-center">Payment Method</th>
                           <th>Activity</th>
                         </tr>
                       </thead>
@@ -130,9 +107,6 @@
                             <div class="small text-muted">
                               <span>New</span> | Registered: Jan 1, 2015</div>
                           </td>
-                          <td class="text-center">
-                            <i class="flag-icon flag-icon-us h4 mb-0" id="us" title="us"></i>
-                          </td>
                           <td>
                             <div class="clearfix">
                               <div class="float-left">
@@ -145,9 +119,6 @@
                             <div class="progress progress-xs">
                               <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                          </td>
-                          <td class="text-center">
-                            <i class="fa fa-cc-mastercard" style="font-size:24px"></i>
                           </td>
                           <td>
                             <div class="small text-muted">Last login</div>
@@ -166,9 +137,6 @@
                             <div class="small text-muted">
                               <span>Recurring</span> | Registered: Jan 1, 2015</div>
                           </td>
-                          <td class="text-center">
-                            <i class="flag-icon flag-icon-br h4 mb-0" id="br" title="br"></i>
-                          </td>
                           <td>
                             <div class="clearfix">
                               <div class="float-left">
@@ -182,162 +150,16 @@
                               <div class="progress-bar bg-info" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                           </td>
-                          <td class="text-center">
-                            <i class="fa fa-cc-visa" style="font-size:24px"></i>
-                          </td>
                           <td>
                             <div class="small text-muted">Last login</div>
                             <strong>5 minutes ago</strong>
                           </td>
                         </tr>
-                        <tr>
-                          <td class="text-center">
-                            <div class="avatar">
-                              <img class="img-avatar" src="img/avatars/3.jpg" alt="admin@bootstrapmaster.com">
-                              <span class="avatar-status badge-warning"></span>
-                            </div>
-                          </td>
-                          <td>
-                            <div>Quintin Ed</div>
-                            <div class="small text-muted">
-                              <span>New</span> | Registered: Jan 1, 2015</div>
-                          </td>
-                          <td class="text-center">
-                            <i class="flag-icon flag-icon-in h4 mb-0" id="in" title="in"></i>
-                          </td>
-                          <td>
-                            <div class="clearfix">
-                              <div class="float-left">
-                                <strong>74%</strong>
-                              </div>
-                              <div class="float-right">
-                                <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                              </div>
-                            </div>
-                            <div class="progress progress-xs">
-                              <div class="progress-bar bg-warning" role="progressbar" style="width: 74%" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td class="text-center">
-                            <i class="fa fa-cc-stripe" style="font-size:24px"></i>
-                          </td>
-                          <td>
-                            <div class="small text-muted">Last login</div>
-                            <strong>1 hour ago</strong>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="text-center">
-                            <div class="avatar">
-                              <img class="img-avatar" src="img/avatars/4.jpg" alt="admin@bootstrapmaster.com">
-                              <span class="avatar-status badge-secondary"></span>
-                            </div>
-                          </td>
-                          <td>
-                            <div>Enéas Kwadwo</div>
-                            <div class="small text-muted">
-                              <span>New</span> | Registered: Jan 1, 2015</div>
-                          </td>
-                          <td class="text-center">
-                            <i class="flag-icon flag-icon-fr h4 mb-0" id="fr" title="fr"></i>
-                          </td>
-                          <td>
-                            <div class="clearfix">
-                              <div class="float-left">
-                                <strong>98%</strong>
-                              </div>
-                              <div class="float-right">
-                                <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                              </div>
-                            </div>
-                            <div class="progress progress-xs">
-                              <div class="progress-bar bg-danger" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td class="text-center">
-                            <i class="fa fa-paypal" style="font-size:24px"></i>
-                          </td>
-                          <td>
-                            <div class="small text-muted">Last login</div>
-                            <strong>Last month</strong>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="text-center">
-                            <div class="avatar">
-                              <img class="img-avatar" src="img/avatars/5.jpg" alt="admin@bootstrapmaster.com">
-                              <span class="avatar-status badge-success"></span>
-                            </div>
-                          </td>
-                          <td>
-                            <div>Agapetus Tadeáš</div>
-                            <div class="small text-muted">
-                              <span>New</span> | Registered: Jan 1, 2015</div>
-                          </td>
-                          <td class="text-center">
-                            <i class="flag-icon flag-icon-es h4 mb-0" id="es" title="es"></i>
-                          </td>
-                          <td>
-                            <div class="clearfix">
-                              <div class="float-left">
-                                <strong>22%</strong>
-                              </div>
-                              <div class="float-right">
-                                <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                              </div>
-                            </div>
-                            <div class="progress progress-xs">
-                              <div class="progress-bar bg-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td class="text-center">
-                            <i class="fa fa-google-wallet" style="font-size:24px"></i>
-                          </td>
-                          <td>
-                            <div class="small text-muted">Last login</div>
-                            <strong>Last week</strong>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="text-center">
-                            <div class="avatar">
-                              <img class="img-avatar" src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com">
-                              <span class="avatar-status badge-danger"></span>
-                            </div>
-                          </td>
-                          <td>
-                            <div>Friderik Dávid</div>
-                            <div class="small text-muted">
-                              <span>New</span> | Registered: Jan 1, 2015</div>
-                          </td>
-                          <td class="text-center">
-                            <i class="flag-icon flag-icon-pl h4 mb-0" id="pl" title="pl"></i>
-                          </td>
-                          <td>
-                            <div class="clearfix">
-                              <div class="float-left">
-                                <strong>43%</strong>
-                              </div>
-                              <div class="float-right">
-                                <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                              </div>
-                            </div>
-                            <div class="progress progress-xs">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td class="text-center">
-                            <i class="fa fa-cc-amex" style="font-size:24px"></i>
-                          </td>
-                          <td>
-                            <div class="small text-muted">Last login</div>
-                            <strong>Yesterday</strong>
-                          </td>
-                        </tr>
                       </tbody>
                     </table>
-		  </div>
-        </div>
+				</div>
+		      </div>
+			</div>
       </main>
       <aside class="aside-menu">
         <ul class="nav nav-tabs" role="tablist">
@@ -627,15 +449,14 @@
     </div>
     <footer class="app-footer">
       <div>
-        <a href="https://coreui.io">CoreUI</a>
-        <span>&copy; 2018 pubd.</span>
+        <span>&copy; 2018</span>
+        <a href="https://pubd.ml">pubd</a>
       </div>
       <div class="ml-auto">
         <span>Powered by</span>
         <a href="https://coreui.io">CoreUI</a>
       </div>
     </footer>
-    <!-- CoreUI and necessary plugins-->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
