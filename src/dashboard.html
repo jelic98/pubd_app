@@ -112,17 +112,41 @@
             	</div>
             </div>
         </div>
-		<div class="card">
-            <div class="card-body">
-            	<div class="row">
-					<div class="col-sm-5">
-            			<h4 class="card-title mb-0">Top Places</h4>
-                		<div class="small text-muted">Most popular places</div>
-        			</div>
+        <div class="row mx-auto">
+			<div class="card col-md-4">
+            	<div class="card-body">
+            		<h4 class="card-title mb-0">Top Places</h4>
+                	<div class="small text-muted">Most popular places</div>
+               		<div class="chart-wrapper mt-4">
+               			<canvas class="chart" id="places-chart" height="300"></canvas>
+              		</div>
         		</div>
-               	<div class="chart-wrapper mt-4">
-               		<canvas class="chart" id="places-chart" height="300"></canvas>
-              	</div>
+            </div>
+			<div class="card col-md-4">
+            	<div class="card-body">
+            		<h4 class="card-title mb-0">Attributes</h4>
+               		<div class="small text-muted">Questions for places</div>
+        		</div>
+            </div>
+			<div class="card col-md-4">
+            	<div class="card-body">
+            		<h4 class="card-title mb-0">Plan</h4>
+               		<div class="small text-muted">Monthly expenses</div>
+					<div class="mt-4">
+            			<p class="card-title mb-0"><b>Base: </b>60 USD</p>
+						<hr>
+            			<p class="card-title mb-0"><b>Requests: </b>15000</p>
+            			<p class="card-title mb-0"><b>Unit: </b>0.01 USD</p>
+            			<p class="card-title mb-0"><b>Price: </b>150 USD</p>
+						<hr>
+            			<p class="card-title mb-0"><b>Places: </b>24</p>
+            			<p class="card-title mb-0"><b>Unit: </b>2 USD</p>
+            			<p class="card-title mb-0"><b>Price: </b>48 USD</p>
+						<hr>
+            			<p class="card-title mb-0"><b>Total: </b>222 USD</p>
+					</div>
+                	<button class="btn btn-primary mt-3" type="button">Upgrade</button>
+        		</div>
             </div>
         </div>
 		<div class="card p-3">
