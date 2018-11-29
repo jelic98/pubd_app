@@ -1,8 +1,27 @@
-Chart.defaults.global.pointHitDetectionRadius = 1;
-Chart.defaults.global.tooltips.enabled = false;
-Chart.defaults.global.tooltips.mode = 'index';
-Chart.defaults.global.tooltips.position = 'nearest';
-Chart.defaults.global.tooltips.custom = CustomTooltips;
+const API_URL = 'https://api.pubd.ml/';
+
+$(document).ready(function() {
+	$('#btnAddPlace').click(function() {
+		$.ajax({
+  			url: API_URL + 'places',
+  			type: 'POST',
+			cache: false,
+  			success: function(data) {
+  				if(data.error != undefined) {
+					showError(data.message);
+					return;
+				}
+			}
+		});
+	});	
+
+	$('.place').each(function(i) {
+		$('#btnRemovePlace' + $(this).attr("data-place")).click(function() {
+			addRemovePlaceModal($(this));
+			$('#removePlaceModal').modal('show');
+		});
+	});
+});
 
 var placesChart = new Chart($('#places-chart'), {
   type: 'pie',
@@ -77,3 +96,49 @@ var sessionsChart = new Chart($('#sessions-chart'), {
     }
   }
 });
+
+function showError(message) {
+	$('main').append('<div class="alert alert-danger" role="alert">' + message + '</div>');
+}
+
+function addRemovePlaceModal(placeRow) {
+	var placeId = placeRow.attr('data-id');
+
+	$('main').append(
+		'<div class="modal fade" id="removePlaceModal" tabindex="-1" role="dialog" aria-labelledby="removePlaceModel" aria-hidden="true">'
+		+ '<div class="modal-dialog" role="document">'
+   		+ '<div class="modal-content">'
+      	+ '<div class="modal-header">'
+        + '<h5 class="modal-title" id="removePlaceModal">Remove place</h5>'
+        + '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'
+        + '<span aria-hidden="true">&times;</span>'
+       	+ '</button>'
+     	+ '</div>'
+    	+ '<div class="modal-body">'
+		+ 'Are you sure you want to remove this place?'
+		+ '</div>'
+    	+ '<div class="modal-footer">'
+     	+ '<button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>'
+      	+ '<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="removePlace()">Yes</button>'
+    	+ '</div>'
+ 		+ '</div>'
+		+ '</div>');
+
+	$('#removePlaceModal').on('hide.bs.modal', function(e) {
+		$(this).remove();
+	});
+}
+
+function removePlace() {
+	$.ajax({
+  		url: API_URL + 'place',
+  		type: 'DELETE',
+		cache: false,
+  		success: function(data) {		
+			if(data.error != undefined) {
+				showError(data.message);
+				return;
+			}
+		}
+	});
+}

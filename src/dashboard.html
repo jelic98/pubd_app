@@ -113,7 +113,7 @@
             </div>
         </div>
         <div class="row mx-auto">
-			<div class="card col-md-4">
+			<div class="card col-md-6">
             	<div class="card-body">
             		<h4 class="card-title mb-0">Top Places</h4>
                 	<div class="small text-muted">Most popular places</div>
@@ -122,43 +122,7 @@
               		</div>
         		</div>
             </div>
-			<div class="card col-md-4">
-            	<div class="card-body">
-            		<h4 class="card-title mb-0">Attributes</h4>
-               		<div class="small text-muted">Questions for places</div>
-
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#requestModal">
-                    Add attribute
-                  </button>
-
-
-                  <div class="modal fade" id="requestModal" tabindex="-1" role="dialog" aria-labelledby="requestModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="requestModalLabel">Request new attribute</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          <textarea style="overflow:hidden" rows="1" cols="35"></textarea>
-                            Attribute Name
-                          </textarea>
-                          <textarea style="overflow:hidden" rows="10" cols="35"></textarea>
-                            Description
-                          </textarea>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Request</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        		</div>
-            </div>
-			<div class="card col-md-4">
+			<div class="card col-md-6">
             	<div class="card-body">
             		<h4 class="card-title mb-0">Plan</h4>
                		<div class="small text-muted">Monthly expenses</div>
@@ -186,8 +150,39 @@
                 	<div class="small text-muted">Manage all your places</div>
         		</div>
 				<div class="col-sm-7 d-none d-md-block">
-                	<button class="btn btn-primary float-right" type="button">Add</button>
+                	<button class="btn btn-primary float-right" id="btnAddPlace" type="button" data-toggle="modal" data-target="#placeModal">Add</button>
                 </div>
+				<div class="modal fade" id="placeModal" tabindex="-1" role="dialog" aria-labelledby="addPlaceModel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+   					 <div class="modal-content">
+      					<div class="modal-header">
+        					<h5 class="modal-title" id="placeModal">Add new place</h5>
+        						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         						<span aria-hidden="true">&times;</span>
+       						</button>
+     					</div>
+    					<div class="modal-body">
+							<div class="form-group">
+    							<label for="name">Name</label>
+  							  	<input type="text" class="form-control" id="name" placeholder="Name">
+    							<label for="address">Address</label>
+  							  	<input type="text" class="form-control" id="address" placeholder="Address">
+    							<label for="url">URL</label>
+  							  	<input type="text" class="form-control" id="url" placeholder="URL">
+ 								<label for="image">Image</label>
+							    <input type="file" class="form-control-file" id="image">
+							</div>
+							<div class="form-group">
+    							<label for="attr1">Atribute 1</label>
+  							  	<input type="text" class="form-control" id="attr1" placeholder="Question 1">
+ 							</div>
+						</div>
+    					<div class="modal-footer">
+     						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      						<button type="button" class="btn btn-primary">Add</button>
+    					</div>
+ 					 </div>
+				</div>
         	</div>
 		  	<table class="table table-responsive-sm table-hover table-outline mt-4 mb-0">
                       <thead class="thead-light">
@@ -200,7 +195,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
+                        <tr class="place" data-place="1">
                           <td class="text-left">
                             <div>0154</div>
                           </td>
@@ -219,11 +214,11 @@
                             <div>Rua Dom Pedro V 57, Lisbon 1250-092, Portugal</div>
                           </td>
                           <td>
-                            <button class="btn btn-success"><i class="cui-pencil"></i></button>
-                            <button class="btn btn-danger"><i class="cui-trash"></i></button>
+                            <button class="btn btn-success" data-toggle="modal" data-target="#placeModal"><i class="cui-pencil"></i></button>
+                            <button class="btn btn-danger" id="btnRemovePlace1"><i class="cui-trash"></i></button>
                           </td>
                         </tr>
-                        <tr>
+                        <tr class="place" data-place="2">
                           <td class="text-left">
                             <div>0559</div>
                           </td>
@@ -242,10 +237,10 @@
                             <div>119 Macdougal Street, New York, USA</div>
                           </td>
                           <td>
-                            <button class="btn btn-success"><i class="cui-pencil"></i></button>
-                            <button class="btn btn-danger"><i class="cui-trash"></i></button>
+                            <button class="btn btn-success" data-toggle="modal" data-target="#placeModal"><i class="cui-pencil"></i></button>
+                            <button class="btn btn-danger" id="btnRemovePlace2"><i class="cui-trash"></i></button>
                           </td>
-                        </tr>
+                        </tr>	
                       </tbody>
                     </table>
 				</div>
