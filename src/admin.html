@@ -1,0 +1,397 @@
+<html>
+  <head>
+    <base href="./">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>pubd - Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/coreui-icons.min.css">
+    <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+    <header class="app-header navbar clearfix">
+      <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="dashboard.html">
+        <img class="navbar-brand-full" src="img/logo.png" width="90" height="auto">
+      </a>
+    </header>
+    <div class="app-body">
+      <div class="sidebar">
+        <nav class="sidebar-nav">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html">
+                <i class="nav-icon cui-speedometer"></i> Dashboard
+              </a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="contact.html">
+                <i class="nav-icon cui-envelope-closed"></i> Contact
+              </a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="help.html">
+                <i class="nav-icon cui-info"></i> Help
+              </a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="nav-icon cui-account-logout"></i> Logout
+              </a>
+            </li>
+            <li class="nav-item mt-auto">
+              <a class="nav-link nav-link-success" href="upgrade.html" target="_top">
+                <i class="nav-icon cui-star"></i> Upgrade</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <main class="main">
+        <div class="container-fluid">
+          <div class="animated fadeIn">
+		  <div class="card mt-2">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-5">
+                    <h4 class="card-title mb-0">Sessions</h4>
+                    <div class="small text-muted">Total number of sessions per day</div>
+                  </div>
+                  <div class="col-sm-7 d-none d-md-block">
+                    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                      <label class="btn btn-outline-secondary">
+                        <input id="option1" type="radio" name="options" autocomplete="off"> Day
+                      </label>
+                      <label class="btn btn-outline-secondary active">
+                        <input id="option2" type="radio" name="options" autocomplete="off" checked=""> Month
+                      </label>
+                      <label class="btn btn-outline-secondary">
+                        <input id="option3" type="radio" name="options" autocomplete="off"> Year
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="chart-wrapper mt-4" style="height:300px;">
+                	<canvas class="chart" id="sessions-chart" height="300"></canvas>
+                </div>
+              </div>
+              <div class="card-footer pb-0">
+                <div class="row">
+					<div class="col-sm-6 col-lg-3">
+                		<div class="card text-white bg-green">
+                  			<div class="card-body">
+                    			<div class="text-value">58.693</div>
+								<div>Total</div>
+                  			</div>
+                		</div>
+              		</div>
+					<div class="col-sm-6 col-lg-3">
+                		<div class="card text-white bg-red">
+                  			<div class="card-body">
+                    			<div class="text-value">54</div>
+								<div>Unfinished</div>
+                  			</div>
+                		</div>
+              		</div>
+					<div class="col-sm-6 col-lg-3">
+                		<div class="card text-white bg-blue">
+                  			<div class="card-body">
+                    			<div class="text-value">234</div>
+								<div>Average</div>
+                  			</div>
+                		</div>
+              		</div>
+					<div class="col-sm-6 col-lg-3">
+                		<div class="card text-white bg-yellow">
+                  			<div class="card-body">
+                    			<div class="text-value">999</div>
+								<div>Maximum</div>
+                  			</div>
+                		</div>
+              		</div>
+            	</div>
+            </div>
+        </div>
+        <div class="row">
+			<div class="card col-lg-7 ml-3">
+            	<div class="card-body">
+            		<h4 class="card-title mb-0">Top places</h4>
+                	<div class="small text-muted">Most popular places</div>
+               		<div class="chart-wrapper mt-4">
+               			<canvas class="chart" id="places-chart" height="300"></canvas>
+              		</div>
+        		</div>
+            </div>
+			<div class="card col-lg-4 ml-auto mr-3">
+            	<div class="card-body">
+            		<h4 class="card-title mb-0">Plan</h4>
+               		<div class="small text-muted">Monthly expenses</div>
+					<div class="mt-4">
+            			<p class="card-title mb-0"><b>Base: </b>60 USD</p>
+						<hr>
+            			<p class="card-title mb-0"><b>Requests: </b>15000</p>
+            			<p class="card-title mb-0"><b>Unit: </b>0.01 USD</p>
+            			<p class="card-title mb-0"><b>Price: </b>150 USD</p>
+						<hr>
+            			<p class="card-title mb-0"><b>Places: </b>24</p>
+            			<p class="card-title mb-0"><b>Unit: </b>2 USD</p>
+            			<p class="card-title mb-0"><b>Price: </b>48 USD</p>
+						<hr>
+            			<p class="card-title mb-0"><b>Total: </b>222 USD</p>
+					</div>
+                	<button class="btn btn-primary mt-3" type="button">Upgrade</button>
+        		</div>
+            </div>
+        </div>
+
+        <div class="card p-3">
+    			<div class="row">
+    				<div class="col-sm-5">
+                		<h4 class="card-title mb-0">Companies</h4>
+                    	<div class="small text-muted">Manage all your companies</div>
+            		</div>
+    				<div class="col-sm-7 d-none d-md-block">
+                    	<button class="btn btn-primary float-right" id="btnAddCompany" type="button" data-toggle="modal" data-target="#companyeModal">Add</button>
+                    </div>
+    		  	<table class="table table-responsive-sm table-hover mt-4 mb-0">
+                          <thead class="thead-light">
+                            <tr>
+                              <th class="text-left">#</th>
+                              <th class="text-left">Name</th>
+                              <th class="text-left">Pricing plan</th>
+                              <th class="text-left">Number of places</th>
+                              <th class="text-left"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="company" data-place="1">
+                              <td class="text-left">
+                                <div>0154</div>
+                              </td>
+                              <td>
+                                <div>Beograd Nocu</div>
+                                <div class="small text-muted">
+                                  <span>New</span> | Registered: Jan 1, 2015</div>
+                              </td>
+                              <td>
+                              </td>
+                              <td>
+                                <div>251</div>
+                              </td>
+                              <td>
+                                <button class="btn btn-success" data-toggle="modal" data-target="#companyModal"><i class="cui-pencil"></i></button>
+                                <button class="btn btn-danger" id="btnRemoveCompany1"><i class="cui-trash"></i></button>
+                                <button class="btn btn-info" data-toggle="modal" data-target="#PlanModal"><i class="cui-british-pound"></i></button>
+                              </td>
+                            </tr>
+                            <tr class="company" data-place="1">
+                              <td class="text-left">
+                                <div>4715</div>
+                              </td>
+                              <td>
+                                <div>Black Turtle</div>
+                                <div class="small text-muted">
+                                  <span>Reccuring</span> | Registered: Jan 24, 2014</div>
+                              </td>
+                              <td>
+                              </td>
+                              <td>
+                                <div>5</div>
+                              </td>
+                              <td>
+                                <button class="btn btn-success" data-toggle="modal" data-target="#companyModal"><i class="cui-pencil"></i></button>
+                                <button class="btn btn-danger" id="btnRemoveCompany1"><i class="cui-trash"></i></button>
+                                <button class="btn btn-info" data-toggle="modal" data-target="#PlanModal"><i class="cui-british-pound"></i></button>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+    				</div>
+    		      </div>
+
+              <div class="card p-3">
+          			<div class="row">
+          				<div class="col-sm-5">
+                      		<h4 class="card-title mb-0">Places</h4>
+                          	<div class="small text-muted">Manage all your places</div>
+                  		</div>
+          				<div class="col-sm-7 d-none d-md-block">
+                          	<button class="btn btn-primary float-right" id="btnAddPlace" type="button" data-toggle="modal" data-target="#placeModal">Add</button>
+                          </div>
+                          <div class="modal fade" id="placeModal" tabindex="-1" role="dialog" aria-labelledby="addPlaceModel" aria-hidden="true">
+                  				  <div class="modal-dialog" role="document">
+                     					 <div class="modal-content">
+                        					<div class="modal-header">
+                          					<h5 class="modal-title" id="placeModal">Add new place</h5>
+                          						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           						<span aria-hidden="true">&times;</span>
+                         						</button>
+                       					</div>
+                      					<div class="modal-body">
+                  							<div class="form-group">
+                      							<label for="name">Name</label>
+                    							  	<input type="text" class="form-control" id="name" placeholder="Name">
+                      							<label for="address">Address</label>
+                    							  	<input type="text" class="form-control" id="address" placeholder="Address">
+                      							<label for="url">URL</label>
+                    							  	<input type="text" class="form-control" id="url" placeholder="URL">
+                   								<label for="image">Image</label>
+                  							    <input type="file" class="form-control-file" id="image">
+                  							</div>
+                  							<div class="form-group">
+                      							<label for="attr1">Atribute 1</label>
+                    							  	<input type="text" class="form-control" id="attr1" placeholder="Question 1">
+                   							</div>
+                  						</div>
+                      					<div class="modal-footer">
+                       						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        						<button type="button" class="btn btn-primary">Add</button>
+                      					</div>
+                   					 </div>
+                  				</div>
+                          	</div>
+          		  	<table class="table table-responsive-sm table-hover mt-4 mb-0">
+                                <thead class="thead-light">
+                                  <tr>
+                                    <th class="text-left">#</th>
+                                    <th class="text-left">Image</th>
+                                    <th class="text-left">Name</th>
+                                    <th class="text-left">Location</th>
+                                    <th class="text-left"></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr class="place" data-place="1">
+                                    <td class="text-left">
+                                      <div>0154</div>
+                                    </td>
+                                    <td class="text-left">
+                                      <div class="avatar">
+                                        <img class="img-avatar" src="img/avatars/1.png" alt="admin@bootstrapmaster.com">
+                                        <span class="avatar-status badge-success"></span>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div>Yiorgos Avraamu</div>
+                                      <div class="small text-muted">
+                                        <span>New</span> | Registered: Jan 1, 2015</div>
+                                    </td>
+                                    <td>
+                                      <div>Rua Dom Pedro V 57, Lisbon 1250-092, Portugal</div>
+                                    </td>
+                                    <td>
+                                      <button class="btn btn-success" data-toggle="modal" data-target="#placeModal"><i class="cui-pencil"></i></button>
+                                      <button class="btn btn-danger" id="btnRemovePlace1"><i class="cui-trash"></i></button>
+                                    </td>
+                                  </tr>
+                                  <tr class="place" data-place="2">
+                                    <td class="text-left">
+                                      <div>0559</div>
+                                    </td>
+                                    <td class="text-left">
+                                      <div class="avatar">
+                                        <img class="img-avatar" src="img/avatars/2.png" alt="admin@bootstrapmaster.com">
+                                        <span class="avatar-status badge-danger"></span>
+                                      </div>
+                                    </td>
+                                    <td>
+                                      <div>Avram Tarasios</div>
+                                      <div class="small text-muted">
+                                        <span>Recurring</span> | Registered: Jan 1, 2015</div>
+                                    </td>
+                                    <td>
+                                      <div>119 Macdougal Street, New York, USA</div>
+                                    </td>
+                                    <td>
+                                      <button class="btn btn-success" data-toggle="modal" data-target="#placeModal"><i class="cui-pencil"></i></button>
+                                      <button class="btn btn-danger" id="btnRemovePlace2"><i class="cui-trash"></i></button>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+          				</div>
+          		      </div>
+
+              <div class="card p-3">
+          			<div class="row">
+          				<div class="col-sm-5">
+                      		<h4 class="card-title mb-0">Attributes</h4>
+                          	<div class="small text-muted">Manage all your attributes</div>
+                  		</div>
+          				<div class="col-sm-7 d-none d-md-block">
+                          	<button class="btn btn-primary float-right" id="btnAddAttribute" type="button" data-toggle="modal" data-target="#attributeModal">Add</button>
+                          </div>
+          		  	<table class="table table-responsive-sm table-hover mt-4 mb-0">
+                                <thead class="thead-light">
+                                  <tr>
+                                    <th class="text-left">#</th>
+                                    <th class="text-left">Name</th>
+                                    <th class="text-left">Question</th>
+                                    <th class="text-left">Number of places assigned</th>
+                                    <th class="text-left"></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr class="attribute" data-place="1">
+                                    <td class="text-left">
+                                      <div>5628</div>
+                                    </td>
+                                    <td>
+                                      <div>Glasna muzika</div>
+                                    </td>
+                                    <td>
+                                      <div>Da li zelite mesto sa glasnom muzikom?</div>
+                                    </td>
+                                    <td>
+                                      <div>25</div>
+                                    </td>
+                                    <td>
+                                      <button class="btn btn-success" data-toggle="modal" data-target="#attributeModal"><i class="cui-pencil"></i></button>
+                                      <button class="btn btn-danger" id="btnRemoveAttribute1"><i class="cui-trash"></i></button>
+                                    </td>
+                                  </tr>
+                                  <tr class="attribute" data-place="1">
+                                    <td class="text-left">
+                                      <div>5628</div>
+                                    </td>
+                                    <td>
+                                      <div>Dobre zenske</div>
+                                    </td>
+                                    <td>
+                                      <div>Da li zelite mesto gde izlaze dobre zenske?</div>
+                                    </td>
+                                    <td>
+                                      <div>142</div>
+                                    </td>
+                                    <td>
+                                      <button class="btn btn-success" data-toggle="modal" data-target="#attributeModal"><i class="cui-pencil"></i></button>
+                                      <button class="btn btn-danger" id="btnRemoveAttribute1"><i class="cui-trash"></i></button>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+          				</div>
+          		      </div>
+			</div>
+      	</main>
+	</div>
+    </div>
+    <footer class="app-footer">
+      <div>
+        <span>&copy; 2018</span>
+        <a href="https://pubd.ml">pubd</a>
+      </div>
+      <div class="ml-auto">
+        <span>Powered by</span>
+        <a href="https://coreui.io">CoreUI</a>
+      </div>
+    </footer>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="node_modules/@coreui/coreui-plugin-chartjs-custom-tooltips/dist/js/custom-tooltips.min.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>
